@@ -1,18 +1,22 @@
 "use client";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import { AssignmentEventsContext } from "../context/event-context";
+import { TaskContext } from "../context/event-context";
 import { useContext } from "react";
 export default function Calender() {
-  const [assignmentEvents,] = useContext(AssignmentEventsContext)
+  const taskContext = useContext(TaskContext);
+  if (!taskContext) {
+    throw new Error("TaskContext must be used within EventsProvider");
+  }
+  const { tasks } = taskContext;
   return (
     <div className="h-full w-full p-4">
       <FullCalendar
         locale="ja"
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
-        events={assignmentEvents}
-     height="100%"
+        events={tasks}
+        height="100%"
       />
     </div>
   );
