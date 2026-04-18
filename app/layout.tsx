@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/Sidebar";
-import { Noto_Sans_JP } from "next/font/google"
-
-const notoSansJP= Noto_Sans_JP({
-  subsets:["latin"],
-  weight:["400","500","700"]
-})
+import { Noto_Sans_JP } from "next/font/google";
+import EventsProvider from "./components/context/event-context";
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,12 +33,14 @@ export default function RootLayout({
       lang="ja"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className={notoSansJP.className} >
-        <div className="flex min-h-screen">
-          <aside className="w-64 bg-white border-r border-slate-200">
+      <body className={notoSansJP.className}>
+        <div className="flex min-h-screen ">
+          <aside className="w-54 bg-white border-r border-slate-200">
             <Sidebar />
           </aside>
-          <main className="flex-1 bg-white p-6 " >{children}</main>
+          <main className="flex-1 bg-white ">
+            <EventsProvider>{children}</EventsProvider>
+          </main>
         </div>
       </body>
     </html>
