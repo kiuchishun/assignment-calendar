@@ -26,7 +26,7 @@ export default function Sidebar() {
         <span>毎週の課題追加</span>
       </Link>
       <Link
-        href="/tasks"
+        href="/taskList"
         className="p-6 hover:text-blue-800 cursor-pointer  flex items-center gap-3"
       >
         <List size={25} />
