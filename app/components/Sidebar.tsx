@@ -3,7 +3,7 @@ import { Home, Plus, Calendar, List } from "lucide-react";
 import Link from "next/link";
 export default function Sidebar() {
   return (
-    <div className=" flex flex-col p-4 ">
+    <div className=" flex flex-col p-2 ">
       <Link
         href="/"
         className="p-6 hover:text-blue-800 cursor-pointer flex items-center gap-3 "
@@ -16,7 +16,7 @@ export default function Sidebar() {
         className="p-6 hover:text-blue-800 cursor-pointer flex items-center gap-3"
       >
         <Plus size={25} />
-        <span>単発の課題追加</span>
+        <span >単発の課題追加</span>
       </Link>
       <Link
         href="/weekly"
