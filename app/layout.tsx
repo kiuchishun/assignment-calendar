@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/Sidebar";
 import { Noto_Sans_JP } from "next/font/google";
-import EventsProvider from "./components/context/event-context";
+import EventsProvider from "./context/event-context";
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
